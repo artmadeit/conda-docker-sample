@@ -3,10 +3,10 @@
 # OS Support also exists for jessie & stretch (slim and full).
 # See https://hub.docker.com/r/library/python/ for all supported Python
 # tags from Docker Hub.
-FROM python:alpine
+# FROM python:alpine
 
 # If you prefer miniconda:
-#FROM continuumio/miniconda3
+FROM continuumio/miniconda3
 
 LABEL Name=conda-docker-sample Version=0.0.1
 
@@ -14,7 +14,7 @@ WORKDIR /app
 ADD . /app
 
 # Using pip:
-CMD ["python3", "-m", "main"]
+# CMD ["python3", "-m", "main"]
 
 # Using pipenv:
 #RUN python3 -m pip install pipenv
@@ -22,5 +22,5 @@ CMD ["python3", "-m", "main"]
 #CMD ["pipenv", "run", "python3", "-m", "conda-docker-sample"]
 
 # Using miniconda (make sure to replace 'myenv' w/ your environment name):
-#RUN conda env create -f environment.yml
-#CMD /bin/bash -c "source activate myenv && python3 -m conda-docker-sample"
+RUN conda env create -f environment.yml
+CMD /bin/bash -c "source activate myenv && python3 -m main"

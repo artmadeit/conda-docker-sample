@@ -1,0 +1,4 @@
+name: myenv
+dependencies:
+  - python=3.4  
+  - numpy=1.9.*

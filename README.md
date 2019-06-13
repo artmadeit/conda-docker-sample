@@ -19,3 +19,7 @@ And to run a docker container from the Docker image created do:
 docker run my-docker-python
 ```
 
+# Python + Conda + Docker: Numpy array sample
+
+Go to "python + conda + docker" commit to see this sample.
+Again you can use the same commands for build and run a Docker image.
